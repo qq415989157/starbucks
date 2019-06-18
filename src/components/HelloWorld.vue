@@ -1,58 +1,459 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+  <nav id="nav">
+    <div class="container">
+      <div class="body">
+        <div id="account-entry" class="container middle secondary">
+          <div>
+            <span>
+              <div class="display-1">
+                <span>心情惬意，来杯咖啡吧&nbsp;☕</span>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
     msg: String
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+body {
+  background: #fff;
+  color: #000;
+  font-family: "Gotham", Helvetica, Arial, PingFangSC-Regular, "Microsoft YaHei",
+    "WenQuanYi Micro Hei", sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 160%;
 }
-ul {
-  list-style-type: none;
+#nav {
+  background: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  overflow: visible;
+  z-index: 1006;
+}
+.display-1 {
+  font-size: 26px;
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+@media (max-width: 1024px) {
+  #nav {
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+  }
+  .page-front #nav .secondary .display-1 {
+    margin-bottom: 16px;
+  }
+}
+@media (max-width: 640px) {
+  #nav .container .secondary {
+    padding: 16px 16px 0 16px;
+  }
+  #nav .container .secondary .display-1 {
+    display: table;
+  }
+}
+
+#nav .container .secondary {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  clear: both;
+  min-height: 62px;
+}
+#nav .container {
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .display-1 {
+    font-size: 22px;
+    font-size: 2.2rem;
+  }
+}
+#nav {
+  background: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  overflow: visible;
+  z-index: 1006;
+}
+#nav::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+@media (min-width: 1025px) {
+  #nav {
+    background: #fff;
+    bottom: 0;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 30%;
+  }
+}
+@media (max-width: 1024px) {
+  #nav {
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+  }
+}
+#nav ul {
+  display: inline-block;
+  margin: 0;
+  list-style: none;
+}
+#nav ul li {
+  display: block;
+  margin: 0;
   padding: 0;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+#nav .logo {
+  float: left;
+  margin-right: 12px;
+  width: 36px;
 }
-a {
-  color: #42b983;
+#nav .logo img {
+  float: left;
+  width: 36px;
+}
+#nav .icon {
+  padding: 6px 0;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+#nav .icon.trigger {
+  height: auto;
+}
+#nav .icon.trigger {
+  -webkit-box-sizing: box-sizing;
+  box-sizing: box-sizing;
+  margin: 0px;
+}
+#nav .container {
+  overflow: hidden;
+}
+#nav .container .header {
+  height: 48px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  display: block;
+  padding: 24px;
+  position: relative;
+}
+@media (max-width: 640px) {
+  #nav .container .header {
+    display: none;
+  }
+}
+#nav .container .header::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  #nav .container .header {
+    padding: 16px;
+  }
+}
+#nav .container .header .icon {
+  border: 0;
+  outline: none;
+  float: right;
+}
+#nav .container .header .icon.trigger {
+  background: none;
+}
+#nav .container .header .icon img {
+  display: block;
+  height: 24px;
+  opacity: 0.8;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+}
+#nav .container .header .icon span {
+  display: none;
+}
+#nav .container .header .icon:hover img {
+  opacity: 1;
+}
+#nav .container .header .icon:active img {
+  opacity: 0.6;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+#nav .container .primary {
+  display: inline-block;
+}
+@media (min-width: 1025px) {
+  #nav .container .primary {
+    max-width: calc(100% - 72px);
+    overflow: hidden;
+  }
+}
+#nav .container .primary ul {
+  display: inline-block;
+  padding: 0;
+  white-space: nowrap;
+}
+#nav .container .primary ul li {
+  float: left;
+  white-space: nowrap;
+}
+#nav .container .primary ul a {
+  color: inherit;
+  display: block;
+  font-weight: 700;
+  font-size: 11px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  padding: 5px 10px 5px;
+  text-transform: uppercase;
+}
+#nav .container .secondary {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  clear: both;
+  min-height: 62px;
+}
+#nav .container .secondary .back {
+  color: rgba(0, 0, 0, 0.56);
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+#nav .container .secondary .back img {
+  float: left;
+  margin-top: -1px;
+  margin-right: -4px;
+}
+@media (max-width: 1024px) {
+  #nav .container .secondary .back {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    font-size: 0px;
+    margin: 1px 8px 1px 0;
+    padding: 3px;
+    height: 28px;
+    width: 28px;
+  }
+  #nav .container .secondary .back img {
+    margin: 2px 0 2px 4px;
+    width: 18px;
+  }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  #nav .container .secondary .back {
+    margin: 4px 8px 4px 0;
+  }
+}
+#nav .container .secondary .display-1 {
+  margin-bottom: 12px;
+}
+@media (max-width: 640px) {
+  #nav .container .secondary .display-1 {
+    display: table;
+  }
+}
+#nav .container .secondary .subcategories {
+  width: 100%;
+}
+#nav .container .secondary .subcategories a {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.56);
+  padding: 6px 0;
+}
+#nav .container .secondary .subcategories a.active,
+#nav .container .secondary .subcategories a:active,
+#nav .container .secondary .subcategories a:hover {
+  color: inherit;
+}
+#nav .container .secondary .subcategories a.active {
+  border-bottom: 3px solid #00a862;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 700;
+  padding-bottom: 3px;
+}
+#nav .container .secondary .tabs-wrapper {
+  display: block;
+}
+@media (min-width: 1025px) {
+  #nav .container .secondary .tabs-wrapper {
+    padding-left: 2px;
+  }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  #nav .container .secondary {
+    padding: 0 16px 0 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #nav .container .secondary::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  #nav .container .secondary .tabs-wrapper {
+    margin: -6px -16px 0;
+    overflow: hidden;
+    width: calc(100% + 32px);
+  }
+  #nav .container .secondary .tabs-wrapper::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  #nav .container .secondary .subcategories {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: -12px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 0 0 12px 18px;
+    white-space: nowrap;
+    width: 100%;
+  }
+  #nav .container .secondary .subcategories::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  #nav .container .secondary .subcategories::-webkit-scrollbar {
+    display: none;
+  }
+  #nav .container .secondary .subcategories li {
+    display: inline-block;
+  }
+  #nav .container .secondary .subcategories li a {
+    padding-top: 12px;
+    margin-right: 18px;
+  }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  #nav .container .secondary .tabs-wrapper {
+    margin: -6px -24px 0;
+    width: calc(100% + 48px);
+  }
+  #nav .container .secondary .subcategories {
+    padding: 0 0 12px 24px;
+  }
+}
+@media (min-width: 1025px) {
+  #nav .container .secondary {
+    padding-left: 96px;
+    padding-right: 24px;
+  }
+  #nav .container .secondary .category {
+    margin-bottom: 18px;
+  }
+  #nav .container .secondary .subcategories a.active {
+    margin-bottom: 2px;
+    padding-bottom: 1px;
+  }
+}
+@media (max-width: 640px) {
+  #nav .overlay .body .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+#nav .overlay .body .container ul {
+  font-size: 26px;
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 120%;
+  width: 100%;
+}
+@media (max-width: 640px) {
+  #nav .overlay .body .container ul {
+    font-size: 22px;
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 640px) {
+  #nav .overlay .body .container ul {
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 120%;
+  }
+}
+#nav .overlay .body .container ul a {
+  color: inherit;
+  display: block;
+  padding: 8px 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@media (max-width: 640px) {
+  #nav .overlay .body .container ul a {
+    padding: 5px 0;
+  }
+}
+#nav .overlay .body .container hr {
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+#nav .overlay .body .container hr::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+@media (min-width: 1025px) {
+  #nav > .container {
+    height: 100%;
+    width: 100%;
+  }
+  #nav > .container > * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: table-row;
+  }
+  #nav > .container .body {
+    height: calc(100% - 98px);
+    display: table;
+    width: 100%;
+  }
+  #nav > .container .body .container {
+    display: table-cell;
+    height: 100%;
+    padding: 0 24px;
+  }
+  #nav > .container .body .container.middle {
+    vertical-align: middle;
+    padding: 0 24px 0 84px;
+  }
 }
 </style>
